@@ -2,7 +2,7 @@
 #include <cstring>
 using namespace std;
 
-int main(int argc, char* argv[]) { //moje da polzva arg ot command red
+int main(int argc, char* argv[]) {
 	
 	int sum = 0;
 
@@ -10,38 +10,27 @@ int main(int argc, char* argv[]) { //moje da polzva arg ot command red
 
 		char *snum = argv[i];
 		int sign = 1;
-		int len = strlen(snum);
-		int j = 0;
 
-		if(snum[0] == '-') {
+		if(*snum == '-') {
 			sign = -1;
-			j = 1;
-			//snum++;
+			snum++;
 		}
 
 		int num = 0;
 		
-		while(j < len) {
-			if(snum[j] >= '0' && snum[j] <= '9') {
+		while(*snum >= '0' && *snum <= '9') {
 				num *= 10;
-				num += (int) (snum[j] - '0');
-				//snum++;
-			}
-			j++;
+				num += *snum - '0';
+				snum++;
 		}
 
 		num *= sign;
 
 		sum += num;
-		//cout << "argv[" << i << "]=" << argv[i] << endl;
 	}
 
 	cout << "Sum = " << sum << endl;
 	
 	return 0;
 }
-
-//sum na comm red
-
-//chete ot stand vhod celi chisla i otpechatva sum
 
