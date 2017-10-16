@@ -65,12 +65,11 @@ int main() {
 		for(int i = 1; i <= STACK_SIZE; i++) {
 			st.push(i);
 		}
-
-    //st.pop();
-    
+		
+		//st.pop();
 	} catch(StackError ex) {
 		cout << "StackError catched..." << endl;
-    cout << ex.get_err_msg() << endl;
+		cout << ex.get_err_msg() << endl;
 	}
 	
 	cout << st.is_empty() << endl;
